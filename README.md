@@ -4,6 +4,7 @@ CS118
 project 2: Confundo
 
 INCLUDED FILES:
+
 		.git:
 		.vagrant: 
 		Vagrantfile:
@@ -36,6 +37,7 @@ INCLUDED FILES:
 			this file
 
 HIGH LEVEL DESIGN:
+
 	client:
 		1. client parses port number, host name, and file name from command line. 
 		2. client creates a socket and connects to the specified port and host.
@@ -56,6 +58,7 @@ HIGH LEVEL DESIGN:
 
 
 ENCOUNTERED DIFFICULTIES: 
+
 	1. correct ack, seq numbers:
 		Updating the ack and seq numbers while simultaneously receiving and sending packets proved to be complicated.  Care must be taken to avoid race conditions in multi-threaded applications.
 	2. timers: 
@@ -66,6 +69,7 @@ ENCOUNTERED DIFFICULTIES:
 		Since seq and ack numbers had a maximum, they could not be directly compared to determine order. ex. seq# 125 is not necessarily a later packet than seq# 100.  Keeping track of how many times the seq# overflowed allowed for comparisons of seq/ack numbers. 
 
 ADDITIONAL LIBRARIES USED: 
+
 	client.cpp:
 		#include <sys/types.h>
 		#include <sys/socket.h>
@@ -108,6 +112,7 @@ ADDITIONAL LIBRARIES USED:
 		#include <ctime>
 
 OTHER ACKNOWLEDGMENTS:
+
 	1. Linux man pages: man7.org, linux.die.net
 	2. Online man pages/code example: tutorialspoint.com
 	3. Online man pages/code exmaple: cplusplus.com
